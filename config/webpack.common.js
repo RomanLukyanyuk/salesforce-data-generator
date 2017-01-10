@@ -40,8 +40,7 @@ module.exports = function (options) {
         },
         {
           test: /\.scss$/,
-          loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
-          exclude: [helpers.root('src', 'styles')]
+          loaders: ['to-string-loader', 'css-loader', 'sass-loader']
         },
       ]
     },
