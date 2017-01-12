@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '@angular/material';
 
 const angularModules = [
   CommonModule,
@@ -17,15 +18,18 @@ function toArray(obj: any) {
 }
 
 const declarations: any[] = [
-
 ];
 
 @NgModule({
-  imports: [...angularModules],
+  imports: [
+    ...angularModules,
+    MaterialModule.forRoot()
+  ],
   declarations: [...declarations],
   exports: [
     ...angularModules,
-    ...declarations
+    ...declarations,
+    MaterialModule
   ]
 })
 export class SharedModule {
