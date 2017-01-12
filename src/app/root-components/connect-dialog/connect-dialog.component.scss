@@ -1,0 +1,21 @@
+.sdg-dialog {
+  & {
+    min-width: 350px;
+  }
+
+  .sdg-dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+  }
+
+  md-dialog-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    md-select {
+      width: 100%;
+    }
+  }
+}

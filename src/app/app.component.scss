@@ -1,0 +1,23 @@
+@import "../assets/styles/variables";
+
+.sdg-header {
+  & {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    background-color: white;
+    border-bottom: $border;
+  }
+
+  .sdg-header-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0px 55px;
+    cursor: pointer;
+  }
+
+  .sdg-header-item:hover {
+    background-color: #f4f4f4;
+  }
+}

@@ -1,0 +1,19 @@
+<div class="sdg-dialog">
+  <header class="sdg-dialog-header">
+    <div>Connect to Salesforce</div>
+    <button md-icon-button (click)="close()">
+      <md-icon>clear</md-icon>
+    </button>
+  </header>
+
+  <form name="connect" novalidate (submit)="close()">
+    <md-dialog-content>
+      <md-select placeholder="Connecting to">
+        <md-option *ngFor="let login of logins" [value]="login.url">
+          {{login.label}}
+        </md-option>
+      </md-select>
+    </md-dialog-content>
+    <button type="submit" md-raised-button>Connect</button>
+  </form>
+</div>
