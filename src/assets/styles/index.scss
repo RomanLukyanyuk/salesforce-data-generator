@@ -1,0 +1,9 @@
+@import "~normalize-scss/sass/_normalize";
+@include normalize();
+
+@import "variables";
+
+body {
+  background-color: $background-color;
+  font-family: 'Roboto', sans-serif;
+}

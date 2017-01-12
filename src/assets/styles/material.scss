@@ -1,13 +1,11 @@
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import '~@angular/material/core/theming/all-theme';
 
 @include md-core();
 
-$primary: md-palette($md-deep-purple);
-$accent:  md-palette($md-amber, A200, A100, A400);
+$primary: md-palette($md-blue);
+$accent: md-palette($md-amber, A200, A100, A400);
 
 $theme: md-light-theme($primary, $accent);
 
 @include angular-material-theme($theme);
-
-@import "~normalize-scss/sass/_normalize";
-@include normalize();
