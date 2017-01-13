@@ -2,12 +2,14 @@ import * as express from 'express';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import { apiRouter } from './routes/api';
+import { publicRouter } from './routes/public';
 
 const app: express.Application = express();
 
 app.use(json());
 app.use(urlencoded({ extended: true }));
 
+app.use('/', publicRouter);
 app.use('/api', apiRouter);
 
 if (app.get('env') === 'production') {
