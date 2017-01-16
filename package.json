@@ -5,7 +5,6 @@
   "scripts": {
     "start": "npm run _server:run",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail && npm run _server:build",
-    "postinstall": "webpack --config config/webpack.prod.js --progress --profile --bail",
     "_start:dev": "concurrently --kill-others \"webpack-dev-server --config config/webpack.dev.js --inline --progress --port 3000\" \"npm run _server:run\"",
     "_start:prod": "npm start",
     "_server:run": "tsc -p ./server && concurrently \"tsc -w -p ./server\" \"nodemon dist/server/bin/www.js\" ",
