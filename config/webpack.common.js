@@ -63,7 +63,8 @@ module.exports = function (options) {
       }),
 
       new CopyWebpackPlugin([
-        { from: 'src/assets/images', to: 'assets/images' }
+        { from: 'src/assets/images', to: 'assets/images' },
+        { from: 'src/oauth.html', to: 'oauth.html' }
       ]),
 
       new HtmlWebpackPlugin({
