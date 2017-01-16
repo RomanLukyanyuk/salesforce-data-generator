@@ -12,6 +12,8 @@ app.use(urlencoded({ extended: true }));
 app.use('/', publicRouter);
 app.use('/api', apiRouter);
 
+app.use(express.static(path.join(__dirname, '/../../dist/client')));
+
 if (app.get('env') === 'production') {
 
   // in production mode run application from dist folder
