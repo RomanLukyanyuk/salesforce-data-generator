@@ -1,9 +1,9 @@
 import * as express from 'express';
-import * as jsforceAjaxProxy from 'jsforce-ajax-proxy';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import { apiRouter } from './routes/api';
 import { publicRouter } from './routes/public';
+var jsforceAjaxProxy = require('jsforce-ajax-proxy');
 
 const app: express.Application = express();
 
