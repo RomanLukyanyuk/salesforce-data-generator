@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { jsforce } from 'jsforce-ajax-proxy';
+import * as jsforceAjaxProxy from 'jsforce-ajax-proxy';
 import { json, urlencoded } from 'body-parser';
 import * as path from 'path';
 import { apiRouter } from './routes/api';
@@ -7,7 +7,7 @@ import { publicRouter } from './routes/public';
 
 const app: express.Application = express();
 
-app.all('/proxy/?*', jsforce({ enableCORS: true }));
+app.all('/proxy/?*', jsforceAjaxProxy({ enableCORS: true }));
 
 app.use(json());
 app.use(urlencoded({ extended: true }));
