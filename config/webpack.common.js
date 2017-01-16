@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = require('./helpers');
 
 module.exports = function (options) {
@@ -60,6 +61,10 @@ module.exports = function (options) {
       new webpack.optimize.CommonsChunkPlugin({
         name: ['polyfills', 'vendor'].reverse()
       }),
+
+      new CopyWebpackPlugin([
+        { from: 'src/assets/images', to: 'assets/images' }
+      ]),
 
       new HtmlWebpackPlugin({
         template: 'src/index.html'
