@@ -32,8 +32,17 @@ export class AppComponent {
         proxyUrl: proxyURL
     });
 
-    jsforce.browser.connection.identity().then((res: any) => {
-       console.log(res);
+    jsforce.browser.login({ 
+        loginUrl: 'https://login.salesforce.com',
+        popup: { width: 912, height: 600 }
+    }, (err: any) => {
+        if (err) {
+            return console.error(err);
+        }
+
+        jsforce.browser.connection.identity().then((res: any) => {
+          console.log(res);
+        });
     });
   }
 }
