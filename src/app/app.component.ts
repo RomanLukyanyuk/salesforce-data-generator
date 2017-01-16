@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation, ViewContainerRef } from '@angular/core';
 import { MdDialog, MdDialogRef } from '@angular/material';
 import { ConnectDialogComponent } from './root-components';
+const jsforce = require('jsforce');
 
 @Component({
   selector: 'sdg-app',
@@ -18,6 +19,21 @@ export class AppComponent {
   }
 
   private connect(): void {
-    this.dialog.open(ConnectDialogComponent);
+    // this.dialog.open(ConnectDialogComponent);
+
+    /* JSFORCE INIT */
+    const clientId = '3MVG9YDQS5WtC11rvanUWkKxkehvO.yx_kS.5Qyal.qrPBAPrLHekam7QKdVIRlNWKHLDct.4i4R_nmKRUqw.';
+    const redirectURI = 'https://salesforce-data-generator.herokuapp.com/oauth.html';
+    const proxyURL = 'https://salesforce-data-generator.herokuapp.com/proxy/';
+    
+    jsforce.browser.init({
+        clientId: clientId,
+        redirectUri: redirectURI,
+        proxyUrl: proxyURL
+    });
+
+    jsforce.browser.connection.identity().then((res: any) => {
+       console.log(res);
+    });
   }
 }
