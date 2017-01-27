@@ -7,7 +7,6 @@ import { ROUTES } from './app.routes';
 import { HomeComponent, ConnectDialogComponent } from './root-components';
 import { SharedModule } from './shared/shared.module';
 
-// TODO:
 @NgModule({
   imports: [
     BrowserModule,
