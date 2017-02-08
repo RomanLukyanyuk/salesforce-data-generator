@@ -3,6 +3,7 @@ import { MdDialog, MdDialogRef } from '@angular/material';
 import { ConnectDialogComponent } from './root-components';
 const jsforce = require('jsforce');
 
+// TODO:
 @Component({
   selector: 'sdg-app',
   encapsulation: ViewEncapsulation.None,
